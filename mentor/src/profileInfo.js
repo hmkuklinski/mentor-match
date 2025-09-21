@@ -71,6 +71,7 @@ export const matchList = [
             eventTime:"5pm"
         }
     ]},
+    
 ];
 
 //go through the matchList to get each mentor's list of events and add them to the list. not forgetting to add information about the mentors themselves!
@@ -101,6 +102,6 @@ export const potentialMatches = [
     {id:"bela", name:"Bela Talbot", imgsrc:"/assets/mentors/bela.jpg", title:"Campus Recruiter", company:"Eternal Eclipse", eventList: []},
     {id:"missouri", name:"Missouri Mosely", imgsrc:"/assets/mentors/missouri.webp", title:"HR Manager", company:"Twilight Innovations", eventList: []},
     {id:"claire", name:"Claire Novak", imgsrc:"/assets/mentors/claire.jpg", title:"Software Development Intern", company:"GhostNet", eventList: []},
-    {id:"kaia", name:"Kaia Mills", imgsrc:"/assets/mentors/intern1.jpg", title:"Game Development Intern", company:"GhostGamers", eventList: []},
-    {id:"nicole", name:"Nicole Mosely", imgsrc:"/assets/mentors/intern2.jpg", title:"Data Security Intern", company:"GhostNet", eventList: []},
+    {id:"kaia", name:"Kaia Mills", imgsrc:"/assets/mentors/intern2.jpg", title:"Game Development Intern", company:"GhostGamers", eventList: []},
+    {id:"nicole", name:"Nicole Mosely", imgsrc:"/assets/mentors/intern1.jpg", title:"Data Security Intern", company:"GhostNet", eventList: []},
 ];

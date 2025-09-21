@@ -282,6 +282,68 @@ a{
     text-align: center;
 }
 
+.swipe-section {
+  perspective: 1000px;
+}
+
+.mentor-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  user-select: none;
+}
+
+.mentor-card img {
+  width: 80%;
+  height: 220px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.mentor-card p{
+    margin:0;
+}
+
+.my-mentors ul {
+  padding-left: 20px;
+}
+
+.next-card {
+  z-index: 0;
+}
+
+.top-card {
+  z-index: 0;
+}
+
+.arrow{
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    padding: 5px;
+}
+.swipe-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.swipe-btn.like-active {
+  transform: scale(1.3);
+  box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.6);
+  border-radius: 50%;
+}
+
+.swipe-btn.dislike-active {
+  transform: scale(1.3);
+  box-shadow: 0 0 20px 5px rgba(27, 206, 72, 0.6);
+  border-radius: 50%;
+}
+
+
+
 @media (max-width: 768px){
     .match-banner-container{
         overflow-x:scroll;
