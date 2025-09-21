@@ -1,10 +1,10 @@
-import SwipeBottom from "./SwipeBottom";
 import { useState, useEffect } from "react";
 import { potentialMatches } from "../profileInfo";
 import Layout from "./Layout";
-export default function SwipeSection() {
+import { matchList } from "../profileInfo";
+export default function SwipeSection({ matches, setMatches }) {
   const [cards, setCards] = useState(potentialMatches);
-  const [myMentors, setMyMentors] = useState([]);
+  // const [myMentors, setMyMentors] = useState([]);
   const [cardClicked, setCardClicked]= useState(false);
   const [activeButton, setActiveButton] = useState(null);
   const [showMatchMessage, setShowMatchMessage]= useState(false);
@@ -44,16 +44,19 @@ export default function SwipeSection() {
     setActiveButton(action);
     const [topCard, ...rest] = cards;
     if (action === "like") {
+        setMatches(prev => [...prev, topCard]);
         setShowMatchMessage(true);
         setTimeout(() => {
             setShowMatchMessage(false);
         }, 2000);
-        setMyMentors((prev) => [...prev, topCard]);
+        // setMyMentors((prev) => [...prev, topCard]);
+        matchList.push(topCard);
     }
         
     setCards(rest);
     setDeltaX(0);
     setTimeout(() => setActiveButton(null), 300);
+    setCardClicked(false);
   };
 
   const topCard = cards[0];
@@ -86,7 +89,7 @@ export default function SwipeSection() {
             style={{
               position: "absolute",
               width: "100%",
-              height: "100%",
+              height: "90%",
               top: 0,
               left: 0,
               transform: "scale(0.95)",
@@ -163,15 +166,15 @@ export default function SwipeSection() {
           padding: "0 20px",
           zIndex: 10
         }}>
-            {nextCard && (
+            {topCard && (
                 <button className={`swipe-btn ${activeButton === "dislike" ? "dislike-active" : ""}`} onClick={() => swipeCard("dislike")}>
                 <img src="/assets/icons/cross.png" alt="dislike" draggable={false} />
                 </button>
             )}
-            {nextCard && (<button onClick={() => toggleDisplay()}>
+            {topCard && (<button className="swipe-btn" onClick={() => toggleDisplay()}>
                 <img src="/assets/icons/info.png" alt="info" draggable={false} />
             </button>)}
-            {nextCard && (
+            {topCard && (
             <button className={`swipe-btn ${activeButton === "like" ? "like-active" : ""}`}onClick={() => swipeCard("like")}>
               <img src="/assets/icons/heart.png" alt="like" draggable={false} />
             </button>

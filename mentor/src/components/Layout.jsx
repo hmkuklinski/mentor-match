@@ -13,7 +13,7 @@ export default function Layout(props){
     return (
         <div className="layout-container">
             {/* NavBar on top of every page*/}
-            {isMobile ? <h2></h2> : <Sidebar {...myProfile} />}
+            {isMobile ? <h2> </h2> : <Sidebar {...myProfile} />}
 
             {/* The contents of the page itself */}
             {props.children}

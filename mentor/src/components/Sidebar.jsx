@@ -18,8 +18,8 @@ export default function Sidebar(props){
                     {navbarLinks.map((navbarItem)=>(
                         <li>
                             <Link to={navbarItem.mylink}>
-                                <img src={navbarItem.imgsrc} alt={navbarItem.id} />
-                                <h4>{navbarItem.text}</h4>
+                                <><img src={navbarItem.imgsrc} alt={navbarItem.id} /></>
+                                <><h4>{navbarItem.text}</h4></>
                             </Link>
                         </li>
                     ))}

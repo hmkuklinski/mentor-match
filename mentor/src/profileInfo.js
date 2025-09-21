@@ -6,10 +6,10 @@ export const myProfile = {
 
 //{id:"profile1", name:"", imgsrc:"", title:"", company:"", eventList: []},
 export const matchList = [
-    {id:"ellen", name:"Ellen Harvelle", imgsrc:"/assets/mentors/ellen.jpg", title:"CEO", company:"Harvelle Tech", eventList: [
+        {id:"ellen", name:"Ellen Harvelle", imgsrc:"/assets/mentors/ellen.jpg", title:"CEO", company:"Harvelle Tech", eventList: [
         {
             eventId: "event1",
-            eventTitle: "Introduction to Quantum Computing",
+            eventTitle: "Quantum Computing 101",
             eventText: "Learn the basics of quantum algorithms, qubits, and how quantum computing is changing the tech landscape.",
             eventImg: "/assets/myevents/quantum.jpg",
             eventDate:"February 8, 2026",
@@ -71,11 +71,11 @@ export const matchList = [
             eventTime:"5pm"
         }
     ]},
-    
+
 ];
 
 //go through the matchList to get each mentor's list of events and add them to the list. not forgetting to add information about the mentors themselves!
-function extractEvents(mentors) {
+export const extractEvents=(mentors)=> {
   const allEvents = [];
   mentors.forEach(mentor => {
     mentor.eventList.forEach(event => {
@@ -93,6 +93,8 @@ export const extractMember =(mentor)=>{
     });
     return myEvents;
 }
+
+
 
 export const eventsOnlyArray = extractEvents(matchList);
 

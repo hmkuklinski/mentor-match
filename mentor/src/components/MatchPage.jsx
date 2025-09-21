@@ -23,9 +23,9 @@ export default function MatchPage(){
         <Layout>
             <div className="home-content" id="match-page-content">
                 <MiniMatchCardSection {...foundMatch} />
-                <div className="match-title">
+                {foundMatch && (<div className="match-title">
                     <h2>Upcoming Events</h2>
-                </div>
+                </div>)}
                 {foundMatch.eventList.map((item)=>(
                     <Event {...item}/>
                 ))}
