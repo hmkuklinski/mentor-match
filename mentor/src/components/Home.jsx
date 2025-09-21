@@ -34,7 +34,7 @@ export default function Home(){
     const homeLayout = {
         mobileLayout: (
             <div className="home-mobile">
-                <SectionTitle text="Mentor's Events" />
+                <SectionTitle text="My Events" />
                 <EventSection />
             </div>
         ),

@@ -1,6 +1,7 @@
 import SectionTitle from "./SectionTitle";
 import {Link} from "react-router-dom";
 
+/* on home page! */
 export default function MentorEvent(props){
     return (
         <div className="event-container">
@@ -14,7 +15,7 @@ export default function MentorEvent(props){
                 </div>
                 <div className="event-text">
                     <p>{props.eventText}</p>
-                    <Link to={`/events/${props.eventId}`} >
+                    <Link to={`/my-mentors/${props.id}`} >
                         <div className="event-button">Learn More {`>`}
                     </div>
                     </Link>
